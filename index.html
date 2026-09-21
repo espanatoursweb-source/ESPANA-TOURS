@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPANA TOURS | Premium Travel & Transportation in Kerala</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#121212',
+                        ivory: '#FAF9F6',
+                        gold: '#C5A059',
+                        'gold-light': '#D4AF37',
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=2070&auto=format&fit=crop')",
+                        'about-pattern': "url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-ivory text-charcoal font-sans antialiased overflow-hidden">
+
+    <!-- 1. Premium Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-charcoal transition-all duration-1000 ease-in-out">
+        <div class="text-center overflow-hidden flex flex-col items-center">
+            <div class="bg-white px-6 py-4 rounded-sm mb-6 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out" id="loader-text">
+                <img src="logo.jpg" alt="Espana Tours" class="h-16 md:h-20 w-auto object-contain">
+            </div>
+            <div class="h-[1px] w-0 bg-gold mx-auto transition-all duration-1500 ease-in-out" id="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- 2. Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-500 py-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="inline-block bg-white px-3 py-1.5 rounded-sm transition-transform hover:scale-105 duration-300">
+                <img src="logo.jpg" alt="Espana Tours" class="h-8 md:h-12 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex space-x-8 items-center">
+                <a href="#home" class="text-xs md:text-sm uppercase tracking-wider text-white/90 hover:text-gold transition-colors duration-300 nav-link">Home</a>
+                <a href="#services" class="text-xs md:text-sm uppercase tracking-wider text-white/90 hover:text-gold transition-colors duration-300 nav-link">Services</a>
+                <a href="#fleet" class="text-xs md:text-sm uppercase tracking-wider text-white/90 hover:text-gold transition-colors duration-300 nav-link">Fleet</a>
+                <a href="#about" class="text-xs md:text-sm uppercase tracking-wider text-white/90 hover:text-gold transition-colors duration-300 nav-link">About Us</a>
+                <a href="#contact" class="text-xs md:text-sm uppercase tracking-wider text-white/90 hover:text-gold transition-colors duration-300 nav-link">Contact</a>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center space-x-6">
+                <a href="tel:+918848002365" class="hidden md:inline-flex items-center justify-center px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 text-xs md:text-sm uppercase tracking-widest">
+                    Book Your Ride
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden text-white nav-text focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-md transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center">
+        <button id="close-menu-btn" class="absolute top-8 right-8 text-white focus:outline-none">
+            <i class="fa-solid fa-xmark text-3xl hover:text-gold transition-colors"></i>
+        </button>
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="#home" class="mobile-link font-heading text-2xl text-white hover:text-gold transition-colors">Home</a>
+            <a href="#services" class="mobile-link font-heading text-2xl text-white hover:text-gold transition-colors">Services</a>
+            <a href="#fleet" class="mobile-link font-heading text-2xl text-white hover:text-gold transition-colors">Fleet</a>
+            <a href="#about" class="mobile-link font-heading text-2xl text-white hover:text-gold transition-colors">About Us</a>
+            <a href="#contact" class="mobile-link font-heading text-2xl text-white hover:text-gold transition-colors">Contact</a>
+            <a href="tel:+918848002365" class="mt-8 inline-block px-8 py-4 bg-gold text-charcoal font-medium tracking-widest uppercase text-sm hover:bg-ivory transition-colors">Book Now</a>
+        </div>
+    </div>
+
+    <!-- 3. Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-20" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
+            <span class="block text-gold uppercase tracking-[0.3em] text-sm md:text-base mb-6 font-medium">Espana Tours</span>
+            <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight mb-6">
+                TRAVEL IN COMFORT.<br>
+                <span class="text-white/90">ARRIVE WITH CONFIDENCE.</span>
+            </h1>
+            <p class="text-white/80 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                Reliable taxi and premium travel transportation services for every journey across Kerala. Your Journey. Our Responsibility.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gold text-charcoal text-sm uppercase tracking-widest font-medium hover:bg-white transition-colors duration-300">
+                    Book Your Ride
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white text-sm uppercase tracking-widest hover:border-gold hover:text-gold transition-all duration-300">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-white/50 hover:text-gold transition-colors">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 4. Services Section -->
+    <section id="services" class="py-24 md:py-32 bg-ivory relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-3">Our Expertise</span>
+                <h2 class="font-heading text-4xl md:text-5xl text-charcoal">Premium Services</h2>
+                <div class="h-[1px] w-20 bg-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="group bg-white p-10 rounded-sm shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500 border border-charcoal/5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-charcoal text-gold flex items-center justify-center rounded-full mb-8 group-hover:bg-gold group-hover:text-charcoal transition-colors duration-300">
+                        <i class="fa-solid fa-car-side text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-charcoal mb-4">Premium Taxi</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Comfortable, safe, and reliable point-to-point transfers across Kerala. Professional chauffeurs ensuring a seamless journey.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="group bg-white p-10 rounded-sm shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500 border border-charcoal/5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-charcoal text-gold flex items-center justify-center rounded-full mb-8 group-hover:bg-gold group-hover:text-charcoal transition-colors duration-300">
+                        <i class="fa-solid fa-route text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-charcoal mb-4">Tour Packages</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Curated travel experiences through Kerala's scenic landscapes. From Munnar hills to Alappuzha backwaters.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-white p-10 rounded-sm shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500 border border-charcoal/5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-charcoal text-gold flex items-center justify-center rounded-full mb-8 group-hover:bg-gold group-hover:text-charcoal transition-colors duration-300">
+                        <i class="fa-solid fa-plane-arrival text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-charcoal mb-4">Airport Transfers</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Punctual and stress-free pickup and drop-off services at all major airports in Kerala. Meet and greet included.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. About / Why Us Section -->
+    <section id="about" class="py-24 bg-charcoal text-ivory relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-about-pattern bg-cover bg-center opacity-10 hidden lg:block"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-3">Why Choose Us</span>
+                    <h2 class="font-heading text-4xl md:text-5xl mb-8 leading-tight">Your Journey.<br>Our Responsibility.</h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        At ESPANA TOURS, we redefine travel in Kerala. We aren't just a transport service; we are your premium travel partners. With a deep understanding of hospitality and logistics, we ensure every mile you travel with us is safe, comfortable, and memorable.
+                    </p>
+                    <p class="text-gray-400 font-light leading-relaxed mb-10">
+                        Whether it's a corporate transfer, a family vacation, or an airport pickup, our pristine fleet and highly trained chauffeurs stand ready to deliver an unmatched experience.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-y-10 gap-x-8">
+                        <div class="relative pl-6 border-l border-gold/30">
+                            <i class="fa-solid fa-user-tie text-gold absolute -left-3 top-1 bg-charcoal px-1"></i>
+                            <h4 class="text-white font-heading text-lg mb-2">Professional</h4>
+                            <p class="text-sm text-gray-400 font-light">Verified, experienced chauffeurs.</p>
+                        </div>
+                        <div class="relative pl-6 border-l border-gold/30">
+                            <i class="fa-regular fa-clock text-gold absolute -left-3 top-1 bg-charcoal px-1"></i>
+                            <h4 class="text-white font-heading text-lg mb-2">Punctual</h4>
+                            <p class="text-sm text-gray-400 font-light">On-time, every time guarantee.</p>
+                        </div>
+                        <div class="relative pl-6 border-l border-gold/30">
+                            <i class="fa-solid fa-gem text-gold absolute -left-3 top-1 bg-charcoal px-1"></i>
+                            <h4 class="text-white font-heading text-lg mb-2">Pristine</h4>
+                            <p class="text-sm text-gray-400 font-light">Immaculately maintained fleet.</p>
+                        </div>
+                        <div class="relative pl-6 border-l border-gold/30">
+                            <i class="fa-solid fa-headset text-gold absolute -left-3 top-1 bg-charcoal px-1"></i>
+                            <h4 class="text-white font-heading text-lg mb-2">24/7 Support</h4>
+                            <p class="text-sm text-gray-400 font-light">Always here when you need us.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative h-[600px] rounded-sm overflow-hidden shadow-2xl" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1549315622-cce3602d41c9?q=80&w=1964&auto=format&fit=crop" alt="Luxury Travel Kerala" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 right-10">
+                        <p class="text-gold font-heading text-2xl italic">"Premium Travel & Transportation Services Across Kerala"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Fleet Preview Section -->
+    <section id="fleet" class="py-24 md:py-32 bg-ivory">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+                <div>
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-3">Our Vehicles</span>
+                    <h2 class="font-heading text-4xl md:text-5xl text-charcoal">The Premium Fleet</h2>
+                </div>
+                <p class="text-gray-500 font-light max-w-md mt-6 md:mt-0 text-sm md:text-base leading-relaxed">
+                    A selection of meticulously maintained vehicles suited for every requirement, ensuring your utmost comfort and safety.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fleet Item -->
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="fleet-1.jpg" alt="Toyota Innova Crysta" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading text-xl text-charcoal mb-2">Toyota Innova Crysta</h3>
+                        <p class="text-sm text-gray-500 mb-6 font-light">Perfect for families & comfortable journeys</p>
+                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 6/7 Seats</span>
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> 4 Bags</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet Item -->
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="fleet-2.jpg" alt="Force Urbania Luxury" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading text-xl text-charcoal mb-2">Force Urbania Luxury</h3>
+                        <p class="text-sm text-gray-500 mb-6 font-light">Ultra-premium travel for large groups</p>
+                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 17 Seats</span>
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> Ample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet Item -->
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="fleet-3.jpg" alt="Premium Force Traveller" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading text-xl text-charcoal mb-2">Premium Force Traveller</h3>
+                        <p class="text-sm text-gray-500 mb-6 font-light">Designed for group tours & events</p>
+                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 12-17 Seats</span>
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> Ample</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact Section -->
+    <section id="contact" class="py-24 bg-charcoal text-white border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div data-aos="fade-right">
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-3">Get in Touch</span>
+                    <h2 class="font-heading text-4xl md:text-5xl mb-8">Book Your Ride</h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-12 max-w-md">
+                        Ready to experience premium travel across Kerala? Contact us today to arrange your transportation or request a custom tour package.
+                    </p>
+
+                    <div class="space-y-10">
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center text-gold mr-6 flex-shrink-0 border border-white/10">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-2">Call Us</h4>
+                                <a href="tel:+918848002365" class="block text-xl font-medium hover:text-gold transition-colors mb-1">8848002365</a>
+                                <a href="tel:+919847450306" class="block text-xl font-medium hover:text-gold transition-colors">9847450306</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center text-gold mr-6 flex-shrink-0 border border-white/10">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-2">Email Us</h4>
+                                <a href="mailto:gireeshvkespana@gmail.com" class="block text-lg hover:text-gold transition-colors">gireeshvkespana@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center text-gold mr-6 flex-shrink-0 border border-white/10">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-2">Follow Us</h4>
+                                <a href="https://www.instagram.com/espana_holidays/" target="_blank" class="block text-lg hover:text-gold transition-colors">@espana_holidays</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-sm shadow-2xl relative" data-aos="fade-left">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
+                                <input type="text" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Phone</label>
+                                <input type="tel" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Number">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Service Required</label>
+                            <div class="relative">
+                                <select class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
+                                    <option>Airport Transfer</option>
+                                    <option>Point-to-Point Taxi</option>
+                                    <option>Tour Package</option>
+                                    <option>Corporate Travel</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-400">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your travel plans..."></textarea>
+                        </div>
+
+                        <button type="button" class="w-full bg-charcoal text-white py-5 uppercase tracking-widest text-sm font-medium hover:bg-gold transition-colors duration-300 mt-4">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer class="bg-[#0a0a0a] pt-16 pb-8 border-t border-white/5 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center mb-16">
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="inline-block bg-white px-4 py-2 rounded-sm mb-6">
+                        <img src="logo.jpg" alt="Espana Tours" class="h-10 md:h-12 w-auto object-contain">
+                    </div>
+                    <p class="text-gray-500 font-light text-sm max-w-xs mx-auto md:mx-0 leading-relaxed text-center md:text-left">
+                        Premium travel and transportation services across Kerala. Arrive with confidence.
+                    </p>
+                </div>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.instagram.com/espana_holidays/" target="_blank" class="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gold hover:bg-white/5 transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gold hover:bg-white/5 transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/918848002365" target="_blank" class="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gold hover:bg-white/5 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <div class="md:text-right">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Bookings</p>
+                    <a href="tel:+918848002365" class="text-white hover:text-gold transition-colors block text-xl font-medium">8848002365</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-light">
+                <p>&copy; 2026 ESPANA TOURS. All rights reserved.</p>
+                <div class="space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
