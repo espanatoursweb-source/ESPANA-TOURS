@@ -33,7 +33,7 @@
                         sans: ['Montserrat', 'sans-serif'],
                     },
                     backgroundImage: {
-                        'hero-pattern': "linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=2070&auto=format&fit=crop')",
+                        'hero-pattern': "linear-gradient(to bottom, rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.9)), url('fleet-1.jpg')",
                         'about-pattern': "url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop')",
                     }
                 }
@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-ivory text-charcoal font-sans antialiased overflow-hidden">
+<body class="bg-ivory text-charcoal font-sans antialiased overflow-hidden overflow-x-hidden">
 
     <!-- 1. Premium Loading Screen -->
     <div id="loader" class="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-charcoal transition-all duration-1000 ease-in-out">
@@ -215,7 +215,7 @@
                 </div>
                 
                 <div class="relative h-[600px] rounded-sm overflow-hidden shadow-2xl" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1549315622-cce3602d41c9?q=80&w=1964&auto=format&fit=crop" alt="Luxury Travel Kerala" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="about-img.jpg" alt="Luxury Travel Kerala" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent"></div>
                     <div class="absolute bottom-10 left-10 right-10">
                         <p class="text-gold font-heading text-2xl italic">"Premium Travel & Transportation Services Across Kerala"</p>
@@ -238,9 +238,24 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Fleet Item -->
                 <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop" alt="Premium Sedan" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading text-xl text-charcoal mb-2">Premium Sedan</h3>
+                        <p class="text-sm text-gray-500 mb-6 font-light">Ideal for business travel & couples</p>
+                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 4 Seats</span>
+                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> 2 Bags</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet Item -->
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-64 overflow-hidden">
                         <img src="fleet-1.jpg" alt="Toyota Innova Crysta" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -255,7 +270,7 @@
                 </div>
 
                 <!-- Fleet Item -->
-                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-64 overflow-hidden">
                         <img src="fleet-2.jpg" alt="Force Urbania Luxury" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -270,7 +285,7 @@
                 </div>
 
                 <!-- Fleet Item -->
-                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                <div class="group relative overflow-hidden rounded-sm bg-white shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
                     <div class="h-64 overflow-hidden relative">
                         <img src="fleet-3.jpg" alt="Premium Force Traveller" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     </div>
