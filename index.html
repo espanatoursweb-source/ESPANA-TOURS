@@ -246,11 +246,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading text-xl text-charcoal mb-2">Toyota Etios Sedan</h3>
-                        <p class="text-sm text-gray-500 mb-6 font-light">Ideal for business travel & couples</p>
-                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 4 Seats</span>
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> 2 Bags</span>
-                        </div>
+                        <p class="text-sm text-gray-500 mb-0 font-light">Ideal for business travel & couples</p>
                     </div>
                 </div>
 
@@ -261,11 +257,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading text-xl text-charcoal mb-2">Toyota Innova Crysta</h3>
-                        <p class="text-sm text-gray-500 mb-6 font-light">Perfect for families & comfortable journeys</p>
-                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 6/7 Seats</span>
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> 4 Bags</span>
-                        </div>
+                        <p class="text-sm text-gray-500 mb-0 font-light">Perfect for families & comfortable journeys</p>
                     </div>
                 </div>
 
@@ -276,11 +268,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading text-xl text-charcoal mb-2">Force Urbania Luxury</h3>
-                        <p class="text-sm text-gray-500 mb-6 font-light">Ultra-premium travel for large groups</p>
-                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 17 Seats</span>
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> Ample</span>
-                        </div>
+                        <p class="text-sm text-gray-500 mb-0 font-light">Ultra-premium travel for large groups</p>
                     </div>
                 </div>
 
@@ -291,11 +279,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading text-xl text-charcoal mb-2">Premium Force Traveller</h3>
-                        <p class="text-sm text-gray-500 mb-6 font-light">Designed for group tours & events</p>
-                        <div class="flex justify-between items-center text-sm border-t border-gray-100 pt-6">
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-user-group text-gold mr-3"></i> 12-17 Seats</span>
-                            <span class="text-charcoal font-medium flex items-center"><i class="fa-solid fa-suitcase text-gold mr-3"></i> Ample</span>
-                        </div>
+                        <p class="text-sm text-gray-500 mb-0 font-light">Designed for group tours & events</p>
                     </div>
                 </div>
             </div>
@@ -358,22 +342,22 @@
                 </div>
 
                 <div class="bg-white p-10 rounded-sm shadow-2xl relative" data-aos="fade-left">
-                    <form class="space-y-8">
+                    <form class="space-y-8" id="booking-form">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
-                                <input type="text" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Name">
+                                <input type="text" id="wa-name" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Name">
                             </div>
                             <div>
                                 <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Phone</label>
-                                <input type="tel" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Number">
+                                <input type="tel" id="wa-phone" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Number">
                             </div>
                         </div>
                         
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Service Required</label>
                             <div class="relative">
-                                <select class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
+                                <select id="wa-service" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
                                     <option>Airport Transfer</option>
                                     <option>Point-to-Point Taxi</option>
                                     <option>Tour Package</option>
@@ -387,11 +371,11 @@
 
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Message</label>
-                            <textarea rows="4" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your travel plans..."></textarea>
+                            <textarea id="wa-message" rows="4" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your travel plans..."></textarea>
                         </div>
 
-                        <button type="button" class="w-full bg-charcoal text-white py-5 uppercase tracking-widest text-sm font-medium hover:bg-gold transition-colors duration-300 mt-4">
-                            Send Request
+                        <button type="button" onclick="sendToWhatsApp()" class="w-full bg-charcoal text-white py-5 uppercase tracking-widest text-sm font-medium hover:bg-gold transition-colors duration-300 mt-4">
+                            Send Request via WhatsApp
                         </button>
                     </form>
                 </div>

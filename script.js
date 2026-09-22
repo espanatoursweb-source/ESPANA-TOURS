@@ -77,3 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// WhatsApp Booking Integration
+function sendToWhatsApp() {
+    const name = document.getElementById('wa-name').value;
+    const phone = document.getElementById('wa-phone').value;
+    const service = document.getElementById('wa-service').value;
+    const message = document.getElementById('wa-message').value;
+
+    if (!name || !phone) {
+        alert('Please enter your name and phone number.');
+        return;
+    }
+
+    const whatsappNumber = '918848002365';
+    const text = `Hello ESPANA TOURS,%0A%0A*New Booking Request:*%0A- *Name:* ${name}%0A- *Phone:* ${phone}%0A- *Service Required:* ${service}%0A- *Message:* ${message}`;
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(whatsappUrl, '_blank');
+}
+
