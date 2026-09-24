@@ -401,18 +401,46 @@
                                 <input type="tel" id="wa-phone" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="Your Number">
                             </div>
                         </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Pickup Date</label>
+                                <input type="date" id="wa-date" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors text-gray-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Pickup Location</label>
+                                <input type="text" id="wa-location" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors" placeholder="E.g. Calicut Airport, Wayanad">
+                            </div>
+                        </div>
                         
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Service Required</label>
-                            <div class="relative">
-                                <select id="wa-service" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
-                                    <option>Airport Transfer</option>
-                                    <option>Point-to-Point Taxi</option>
-                                    <option>Tour Package</option>
-                                    <option>Corporate Travel</option>
-                                </select>
-                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Service Required</label>
+                                <div class="relative">
+                                    <select id="wa-service" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
+                                        <option>Airport Transfer</option>
+                                        <option>Point-to-Point Taxi</option>
+                                        <option>Tour Package</option>
+                                        <option>Corporate Travel</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-400">
+                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Vehicle Preference</label>
+                                <div class="relative">
+                                    <select id="wa-vehicle" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold transition-colors appearance-none">
+                                        <option>Toyota Etios Sedan (4 Seats)</option>
+                                        <option>Toyota Innova Crysta (6-7 Seats)</option>
+                                        <option>Premium Force Traveller (12-17 Seats)</option>
+                                        <option>Force Urbania Luxury (17 Seats)</option>
+                                        <option>Any Available</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-400">
+                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>

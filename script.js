@@ -82,7 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function sendToWhatsApp() {
     const name = document.getElementById('wa-name').value;
     const phone = document.getElementById('wa-phone').value;
+    const date = document.getElementById('wa-date').value;
+    const location = document.getElementById('wa-location').value;
     const service = document.getElementById('wa-service').value;
+    const vehicle = document.getElementById('wa-vehicle').value;
     const message = document.getElementById('wa-message').value;
 
     if (!name || !phone) {
@@ -91,7 +94,7 @@ function sendToWhatsApp() {
     }
 
     const whatsappNumber = '918848002365';
-    const text = `Hello ESPANA TOURS,%0A%0A*New Booking Request:*%0A- *Name:* ${name}%0A- *Phone:* ${phone}%0A- *Service Required:* ${service}%0A- *Message:* ${message}`;
+    const text = `Hello ESPANA TOURS,%0A%0A*New Booking Request:*%0A- *Name:* ${name}%0A- *Phone:* ${phone}%0A- *Date:* ${date || 'Not specified'}%0A- *Pickup Location:* ${location || 'Not specified'}%0A- *Service Required:* ${service}%0A- *Vehicle Preference:* ${vehicle}%0A- *Message:* ${message}`;
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
     window.open(whatsappUrl, '_blank');
